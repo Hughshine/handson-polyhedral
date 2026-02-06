@@ -33,6 +33,9 @@ This repo contains the code for the hands-on polyhedral course.
 1.1+| using https://pypi.org/project/isl-python/[isl-python]>=0.1.8
 https://github.com/xdslproject/xdsl/[xdsl]==0.48.3
 dowhen,mpi4py
+| 16. Cute Concepts
+
+|
 |===
 
 
