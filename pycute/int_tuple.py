@@ -138,6 +138,24 @@ def prefix_product(a, init=1):
     else:                              # "int" "int"
       return init
 
+# Exclusive suffix product with output congruent to input a
+def suffix_product(a, init=1):
+  if is_tuple(a):
+    if is_tuple(init):                 # tuple tuple
+      assert len(a) == len(init)
+      return tuple(suffix_product(x,i) for x,i in zip(a,init))
+    else:                              # tuple "int"
+      r = []
+      for v in reversed(a):
+        r.append(suffix_product(v,init))
+        init = init * product(v)
+      return tuple(reversed(r))
+  else:
+    if is_tuple(init):                 # "int" tuple
+      assert False           # Error
+    else:                              # "int" "int"
+      return init
+
 
 def idx2crd(idx, shape, stride=None):
   if stride is None:
