@@ -1,0 +1,23 @@
+services:
+  handson-polyhedral:
+    image: handson-polyhedral:portable
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    working_dir: /workspace/handson-polyhedral
+    volumes:
+      - ./:/workspace/handson-polyhedral
+    environment:
+      JUPYTER_CONFIG_DIR: /workspace/.jupyter
+      JUPYTER_DATA_DIR: /workspace/.jupyter
+      JUPYTER_RUNTIME_DIR: /workspace/.jupyter/runtime
+      JUPYTER_PATH: /opt/venv/share/jupyter
+      LD_LIBRARY_PATH: /opt/venv/lib
+    command: >
+      bash -lc "source /opt/venv/bin/activate &&
+      jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+      --notebook-dir=/workspace/handson-polyhedral --allow-root"
+    tty: true
+    stdin_open: true

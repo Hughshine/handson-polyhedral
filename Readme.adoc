@@ -2,6 +2,46 @@
 
 This repo contains the code for the hands-on polyhedral course.
 
+== Setup
+
+TIP: 推荐优先使用 Docker（环境最稳定、开箱即用）。本地 Python 3.12 只在需要本机运行时再使用。
+
+=== New Clone: Local Python 3.12
+
+Run once:
+
+[source,bash]
+----
+./scripts/setup_local312.sh
+----
+
+Daily use:
+
+[source,bash]
+----
+source env.local312.sh
+----
+
+In VSCode/Jupyter, select kernel:
+
+- `handson-polyhedral (py312)` for most chapters
+- `handson-polyhedral (py312+pet)` for chapters 08-11
+
+Details: `LOCAL_ENV_SETUP.txt`
+
+=== New Clone: Docker (Portable)
+
+[source,bash]
+----
+docker compose build
+docker compose up -d
+docker compose logs --tail 50 handson-polyhedral
+----
+
+Open the URL with token shown in logs.
+
+Details: `DOCKER.md`
+
 == Lesson
 
 [width=100%,cols="80%,20%"]

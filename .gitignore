@@ -6,3 +6,21 @@ build
 out
 tmp
 __pycache__
+
+# Local Python environments
+.venv/
+.venv312/
+.python312/
+
+# Jupyter runtime and notebook cache
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.nbtest_logs/
+
+# Large local source/build trees
+llvm-project/
+llvm-build-17/
+
+# Local one-off debug helpers
+utils/hotfix_isl_loader.py

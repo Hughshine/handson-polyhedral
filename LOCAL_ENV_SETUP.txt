@@ -1,0 +1,31 @@
+本地环境安装与使用（新拉仓库）
+==============================
+
+先看：如果没有本机运行需求，优先使用 Docker（见 `DOCKER.md`）。
+本文件只用于需要本机 Python 3.12 的场景。
+
+首次安装（一次）
+---------------
+
+```bash
+./scripts/setup_local312.sh
+```
+
+日常使用（每次新开终端）
+----------------------
+
+```bash
+source env.local312.sh
+python - <<'PY'
+import isl, dowhen, xdsl, mpi4py
+print("ok")
+PY
+```
+
+VSCode/Jupyter 内核选择
+---------------------
+
+- `handson-polyhedral (py312)`：默认章节
+- `handson-polyhedral (py312+pet)`：08-11 章节
+
+注意：如果刚切换内核，先 `Restart Kernel` 再运行第一个单元。
